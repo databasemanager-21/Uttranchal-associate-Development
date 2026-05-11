@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Uttranchal Associate and Development</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f5f7fa;
+    color:#222;
+    overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+nav{
+    width:100%;
+    padding:15px 7%;
+    background:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+    box-shadow:0 2px 15px rgba(0,0,0,0.08);
+}
+
+/* LOGO */
+
+.logo img{
+    width:260px;
+    height:auto;
+}
+
+/* NAV LINKS */
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#333;
+    font-weight:500;
+    transition:0.3s;
+    font-size:17px;
+}
+
+nav ul li a:hover{
+    color:#ff7b00;
+}
+
+/* HERO SECTION */
+
+.hero{
+    width:100%;
+    min-height:100vh;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
+    url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop');
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    align-items:center;
+    padding:0 8%;
+}
+
+.hero-content{
+    max-width:800px;
+    color:white;
+    animation:fadeUp 1.5s ease;
+}
+
+.hero-content h1{
+    font-size:65px;
+    line-height:1.2;
+    margin-bottom:20px;
+}
+
+.hero-content h1 span{
+    color:#ffb703;
+}
+
+.hero-content p{
+    font-size:18px;
+    line-height:1.8;
+    margin-bottom:35px;
+}
+
+.hero-btn{
+    display:inline-block;
+    padding:15px 35px;
+    background:#ff7b00;
+    color:white;
+    text-decoration:none;
+    border-radius:40px;
+    font-size:18px;
+    transition:0.4s;
+}
+
+.hero-btn:hover{
+    background:white;
+    color:#ff7b00;
+    transform:translateY(-5px);
+}
+
+/* ABOUT */
+
+.about{
+    padding:100px 8%;
+    display:flex;
+    flex-wrap:wrap;
+    gap:50px;
+    align-items:center;
+}
+
+.about img{
+    width:500px;
+    max-width:100%;
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+.about-text{
+    flex:1;
+}
+
+.section-title{
+    font-size:45px;
+    color:#123b69;
+    margin-bottom:20px;
+}
+
+.about-text p{
+    color:#555;
+    line-height:1.9;
+    margin-bottom:20px;
+}
+
+/* SERVICES */
+
+.services{
+    padding:100px 8%;
+    background:#eef3f8;
+    text-align:center;
+}
+
+.service-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    margin-top:50px;
+}
+
+.service-box{
+    background:white;
+    padding:40px 25px;
+    border-radius:20px;
+    transition:0.4s;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.service-box:hover{
+    transform:translateY(-10px);
+}
+
+.service-box h3{
+    margin:20px 0;
+    color:#123b69;
+    font-size:24px;
+}
+
+.service-box p{
+    color:#666;
+    line-height:1.7;
+}
+
+/* PROPERTIES */
+
+.properties{
+    padding:100px 8%;
+    text-align:center;
+}
+
+.property-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+    margin-top:50px;
+}
+
+.property-card{
+    background:white;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    transition:0.4s;
+}
+
+.property-card:hover{
+    transform:scale(1.03);
+}
+
+.property-card img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+}
+
+.property-info{
+    padding:25px;
+    text-align:left;
+}
+
+.property-info h3{
+    color:#123b69;
+    margin-bottom:10px;
+}
+
+.property-info p{
+    color:#666;
+    margin-bottom:10px;
+}
+
+/* CONTACT */
+
+.contact{
+    padding:100px 8%;
+    background:#123b69;
+    color:white;
+    text-align:center;
+}
+
+.contact-box{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    margin-top:50px;
+}
+
+.contact-card{
+    background:rgba(255,255,255,0.1);
+    padding:35px;
+    border-radius:20px;
+    backdrop-filter:blur(8px);
+}
+
+.contact-card h3{
+    color:#ffb703;
+    margin-bottom:15px;
+    font-size:25px;
+}
+
+.contact-card p{
+    line-height:1.8;
+    font-size:17px;
+}
+
+/* MAP BUTTON */
+
+.map-btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:12px 25px;
+    border:2px solid white;
+    border-radius:12px;
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.map-btn:hover{
+    background:white;
+    color:#123b69;
+}
+
+/* FOOTER */
+
+footer{
+    background:#071f36;
+    color:white;
+    text-align:center;
+    padding:20px;
+    font-size:15px;
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero-content h1{
+    font-size:40px;
+}
+
+nav ul{
+    display:none;
+}
+
+.logo img{
+    width:180px;
+}
+
+.section-title{
+    font-size:35px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="logo">
+
+<!-- LOGO IMAGE -->
+
+<img src="Image.jpg" alt="Uttranchal Associate and Development Logo">
+
+</div>
+
+<ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+<!-- HERO SECTION -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<h1>
+Welcome To <span>Uttranchal Associate and Development</span>
+</h1>
+
+<p>
+Trusted property dealer for buying, selling and renting homes,
+shops, flats and commercial spaces in Vaishali.
+Best deals with complete transparency and trusted service.
+</p>
+
+<a href="#contact" class="hero-btn">
+Contact Now
+</a>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+<img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop">
+
+<div class="about-text">
+
+<h2 class="section-title">
+About Us
+</h2>
+
+<p>
+Welcome to Uttranchal Associate and Development.
+We help families and businesses find the perfect property
+with trusted guidance and professional service.
+</p>
+
+<p>
+Whether you want to buy, sell or rent property,
+we provide the best deals and complete support
+throughout the process.
+</p>
+
+</div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+<h2 class="section-title">
+Our Services
+</h2>
+
+<div class="service-container">
+
+<div class="service-box">
+    <h3>Property Buying</h3>
+
+    <p>
+    Find the best residential and commercial properties
+    in prime locations.
+    </p>
+</div>
+
+<div class="service-box">
+    <h3>Property Selling</h3>
+
+    <p>
+    Get genuine buyers and the best market value
+    for your property.
+    </p>
+</div>
+
+<div class="service-box">
+    <h3>Rental Services</h3>
+
+    <p>
+    Flats, offices and shops available for rent
+    at affordable prices.
+    </p>
+</div>
+
+</div>
+
+</section>
+
+<!-- PROPERTIES -->
+
+<section class="properties" id="properties">
+
+<h2 class="section-title">
+Featured Properties
+</h2>
+
+<div class="property-container">
+
+<div class="property-card">
+
+<img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200&auto=format&fit=crop">
+
+<div class="property-info">
+    <h3>Luxury Villa</h3>
+    <p>Vaishali Sector 1</p>
+    <p>₹ Add Price Here</p>
+</div>
+
+</div>
+
+<div class="property-card">
+
+<img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop">
+
+<div class="property-info">
+    <h3>Modern Apartment</h3>
+    <p>Prime Location</p>
+    <p>₹ Add Price Here</p>
+</div>
+
+</div>
+
+<div class="property-card">
+
+<img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1200&auto=format&fit=crop">
+
+<div class="property-info">
+    <h3>Commercial Shop</h3>
+    <p>Main Market Area</p>
+    <p>₹ Add Price Here</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<h2 class="section-title" style="color:white;">
+Contact Us
+</h2>
+
+<div class="contact-box">
+
+<div class="contact-card">
+    <h3>Phone Number</h3>
+    <p>+91 9810482399</p>
+    <p>+91 9315562588</p>
+</div>
+
+<div class="contact-card">
+    <h3>Email Address</h3>
+    <p>Harishsah180@gmail.com</p>
+</div>
+
+<div class="contact-card">
+
+<h3>Office Location</h3>
+
+<a href="https://www.google.com/maps/place/28%C2%B038'23.3%22N+77%C2%B020'23.1%22E/@28.6397998,77.3371799,17z/data=!3m1!4b1!4m4!3m3!8m2!3d28.6397998!4d77.3397548?hl=en&entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D"
+target="_blank"
+class="map-btn">
+
+📍 View Office Location
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+© 2026 Uttranchal Associate and Development | All Rights Reserved
+</footer>
+
+</body>
+</html>
